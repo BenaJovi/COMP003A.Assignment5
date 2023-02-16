@@ -61,7 +61,7 @@ namespace COMP003A.Assignment5
         /// <param name="Size"></param>
         static void IsoscelesTriangleBuilder(char inputCharacter, int Size)
         {
-            int i;
+            int i; 
             int j;
             Console.WriteLine(" ");
 
