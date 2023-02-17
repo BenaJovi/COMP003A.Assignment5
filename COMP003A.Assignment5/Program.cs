@@ -13,8 +13,6 @@ namespace COMP003A.Assignment5
         static void Main(string[] args)
         {
             PrintSeparator();
-            Console.WriteLine("\t Triangle Section");
-            PrintSeparator();
 
             Console.Write("Enter a Character:");
             char inputCharacter = Convert.ToChar(Console.ReadLine());
