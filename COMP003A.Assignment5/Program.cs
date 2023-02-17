@@ -52,7 +52,7 @@ namespace COMP003A.Assignment5
          PrintSeparator();
          console.writeline("\t triangle section");
          PrintSeparator();
-        }
+        } 
 
         /// <summary>
         /// Method that prints an Isosceles triangle with desired character.
