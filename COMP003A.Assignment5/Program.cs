@@ -51,7 +51,9 @@ namespace COMP003A.Assignment5
         /// <param name="parameter">String Input</param>
         static void PrintSeparator(string parameter)
         {
-
+         PrintSeparator();
+         console.writeline("\t triangle section");
+         PrintSeparator();
         }
 
         /// <summary>
