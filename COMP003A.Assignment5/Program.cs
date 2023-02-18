@@ -2,7 +2,6 @@
 // Course: Comp-003A
 // Purpose: Outputs an Isosceles triangle with a desired character and length of triangle. 
 
-
 namespace COMP003A.Assignment5
 {
     class Program
