@@ -1,10 +1,7 @@
-﻿// Author:
-// Course:
-// Purpose: 
+﻿// Author: Jovani Benavides 
+// Course: Comp-003A
+// Purpose: Outputs an Isosceles triangle with a desired character and length of triangle. 
 
-
-using System.Collections.Generic;
-using System.Drawing;
 
 namespace COMP003A.Assignment5
 {
@@ -12,82 +9,94 @@ namespace COMP003A.Assignment5
     {
         static void Main(string[] args)
         {
-            PrintSeparator();
+                PrintSeparator("\tTriangle");
 
-            Console.Write("Enter a Character:");
-            char inputCharacter = Convert.ToChar(Console.ReadLine());
-            Console.Write("Enter a positive number:");
-            int Size = Convert.ToInt32(Console.ReadLine());
-            IsoscelesTriangleBuilder(inputCharacter, Size);
+                Console.Write("Enter a Character:");
+                char inputCharacter = Convert.ToChar(Console.ReadLine());
+                Console.Write("Enter a positive number:");
+                int Size = Convert.ToInt32(Console.ReadLine());
+                IsoscelesTriangleBuilder(inputCharacter, Size);
 
-            PrintSeparator();
-            Console.WriteLine("\t Favorite Character Section");
-            PrintSeparator();
-
-         
-            Console.Write("Enter Character Name:");
-            string inputName = Convert.ToString(Console.ReadLine());
-            Console.Write(" Enter their Birth Year:");
-            int birthYear = Convert.ToInt32(Console.ReadLine());
-            AgeCalculator(birthYear);
-           int age= AgeCalculator(birthYear);
-            Console.WriteLine($"{inputName} turns {age} this year!");
-            
+                PrintSeparator("\tCharacter list");
 
 
-
-
+                Console.Write("\n");
+                CharacterInfo(1984, "Naruto");
+                CharacterInfo(1987, "Lionel Messi");
+                CharacterInfo(1928, "Mickey Mouse");
+                CharacterInfo(1974, "Goku");
+                CharacterInfo(1978, "Kobe Bryant");
+                Console.Write("\n");
         }
+
+        /// <summary>
+        /// Method to Print Line of Characters for Format
+        /// </summary>
         static void PrintSeparator()
         {
             Console.WriteLine("".PadRight(50, '~'));
 
         }
+        
         /// <summary>
-        /// Method to a enter a string with no return 
+        /// Method to Change the Title Name
         /// </summary>
-        /// <param name="parameter">String Input</param>
-        static void PrintSeparator(string parameter)
-        {
-         PrintSeparator();
-         console.writeline("\t triangle section");
-         PrintSeparator();
-        } 
-
-        /// <summary>
-        /// Method that prints an Isosceles triangle with desired character.
-        /// </summary>
-        /// <param name="inputCharacter"></param>
-        /// <param name="Size"></param>
-        static void IsoscelesTriangleBuilder(char inputCharacter, int Size)
-        {
-            int i; 
-            int j;
-            Console.WriteLine(" ");
-
-            for (i = 1; i <= Size; i++)
+        /// <param name="Section">String Input</param>
+        static void PrintSeparator(string Section)
             {
-                for (j = 1; j <= i; j++)
-                {
-                    Console.Write(inputCharacter);
-                }
-                Console.WriteLine(" ");
+                PrintSeparator();
+                Console.WriteLine($"\t{Section} Section");
+                PrintSeparator();
             }
 
-            for (i = Size-1; i >= 1; i--)
+            /// <summary>
+            /// Method that prints an Isosceles triangle with desired character.
+            /// </summary>
+            /// <param name="inputCharacter"></param>
+            /// <param name="Size"></param>
+            static void IsoscelesTriangleBuilder(char inputCharacter, int Size)
             {
-                for (j = 1; j <= i; j++)
-                {
-                    Console.Write(inputCharacter);
-                }
+                int i;
+                int j;
                 Console.WriteLine(" ");
+
+                for (i = 1; i <= Size; i++)
+                {
+                    for (j = 1; j <= i; j++)
+                    {
+                        Console.Write(inputCharacter);
+                    }
+                    Console.WriteLine(" ");
+                }
+
+                for (i = Size - 1; i >= 1; i--)
+                {
+                    for (j = 1; j <= i; j++)
+                    {
+                        Console.Write(inputCharacter);
+                    }
+                    Console.WriteLine(" ");
+                }
             }
-        }
+        /// <summary>
+        /// Method to that will subtract DOB minus Current Year
+        /// </summary>
+        /// <param name="birthYear">Input integer</param>
         static int AgeCalculator(int birthYear)
         {
-            int age;
-             age = 2023 - Convert.ToInt32(birthYear);
+            int age = (2023- birthYear);
             return age;
         }
+        /// <summary>
+        /// Method that outputs how old character is turnning this year.
+        /// </summary>
+        /// <param name="birthYear">integer input</param>
+        /// <param name="name">string input</param>
+        static void CharacterInfo(int birthYear, string name)
+        {
+            int age = AgeCalculator(birthYear);
+            Console.WriteLine($"{name} turns {age} this year!");
+        }
+
     }
 }
